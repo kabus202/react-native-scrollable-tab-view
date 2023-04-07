@@ -1,6 +1,6 @@
 const React = require('react');
-const { Component } = React;
-const { ViewPropTypes } = ReactNative = require('react-native');
+const ReactNative = require('react-native');
+const DeprecatedPropTypes = require('deprecated-react-native-prop-types');
 const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
 const {
@@ -13,15 +13,16 @@ const {
   InteractionManager,
 } = ReactNative;
 
+
 const TimerMixin = require('react-timer-mixin');
-import PagerView from 'react-native-pager-view';
+const ViewPager = require('react-native-pager-view').default;
 
 const SceneComponent = require('./SceneComponent');
 const DefaultTabBar = require('./DefaultTabBar');
 const ScrollableTabBar = require('./ScrollableTabBar');
 
 const AnimatedViewPagerAndroid = Platform.OS === 'android' ?
-  Animated.createAnimatedComponent(PagerView) :
+  Animated.createAnimatedComponent(ViewPager) :
   undefined;
 
 const ScrollableTabView = createReactClass({
@@ -40,12 +41,12 @@ const ScrollableTabView = createReactClass({
     onChangeTab: PropTypes.func,
     onScroll: PropTypes.func,
     renderTabBar: PropTypes.any,
-    tabBarUnderlineStyle: ViewPropTypes.style,
+    tabBarUnderlineStyle: DeprecatedPropTypes.ViewPropTypes.style,
     tabBarBackgroundColor: PropTypes.string,
     tabBarActiveTextColor: PropTypes.string,
     tabBarInactiveTextColor: PropTypes.string,
     tabBarTextStyle: PropTypes.object,
-    style: ViewPropTypes.style,
+    style: DeprecatedPropTypes.ViewPropTypes.style,
     contentProps: PropTypes.object,
     scrollWithoutAnimation: PropTypes.bool,
     locked: PropTypes.bool,
