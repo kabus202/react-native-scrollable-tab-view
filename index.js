@@ -15,7 +15,7 @@ const {
 
 
 const TimerMixin = require('react-timer-mixin');
-const ViewPager = require('react-native-pager-view').default;
+const ViewPager = require('react-native-pager-view');
 
 const SceneComponent = require('./SceneComponent');
 const DefaultTabBar = require('./DefaultTabBar');
