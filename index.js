@@ -7,10 +7,8 @@ const {
   Dimensions,
   View,
   Animated,
-  ScrollView,
   Platform,
   StyleSheet,
-  InteractionManager,
 } = ReactNative;
 
 
@@ -257,7 +255,7 @@ const ScrollableTabView = createReactClass({
         style={styles.scrollableContentAndroid}
         initialPage={this.props.initialPage}
         onPageSelected={this._updateSelectedPage}
-        keyboardDismissMode="on-drag"
+        keyboardDismissModekeyboardDismissMode="on-drag"
         scrollEnabled={!this.props.locked}
         onPageScroll={Animated.event(
           [{
